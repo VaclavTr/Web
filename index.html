@@ -234,6 +234,53 @@
             outline: 2px solid white;
             outline-offset: 2px;
         }
+
+        .interactive-panel {
+            display: grid;
+            gap: 16px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(102, 126, 234, 0.18);
+        }
+
+        .interactive-panel label {
+            display: grid;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .interactive-panel input {
+            padding: 12px 14px;
+            border: 1px solid #ccd6ff;
+            border-radius: 8px;
+            font-size: 1em;
+            width: 100%;
+        }
+
+        .interactive-panel button {
+            width: fit-content;
+            padding: 12px 18px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .interactive-panel button:hover {
+            background: var(--secondary);
+        }
+
+        .interactive-output {
+            padding: 14px;
+            border-radius: 10px;
+            background: #eef2ff;
+            border: 1px dashed var(--primary);
+            font-weight: 600;
+        }
+
             header h1 {
                 font-size: 2em;
             }
@@ -268,6 +315,7 @@
                 <li><a href="#podminky">Podmínky</a></li>
                 <li><a href="#smycky">Smyčky</a></li>
                 <li><a href="#funkce">Funkce</a></li>
+                <li><a href="#interaktivni">Interaktivní fce</a></li>
             </ul>
         </nav>
 
@@ -548,11 +596,65 @@ p, z = dělení(17, 5)<br>
 print(p, z)  # 3 2
                 </div>
             </section>
+
+            <section id="interaktivni">
+                <h2>Interaktivní funkce</h2>
+                <p>Vyzkoušejte funkci přímo na stránce. Stačí zadat údaje a kliknout na tlačítko.</p>
+
+                <div class="interactive-panel">
+                    <label for="userName">
+                        Jméno
+                        <input type="text" id="userName" placeholder="Zadejte své jméno">
+                    </label>
+
+                    <label for="userAge">
+                        Věk
+                        <input type="number" id="userAge" placeholder="Zadejte svůj věk" min="0">
+                    </label>
+
+                    <button type="button" id="runFunctionBtn">Spustit funkci</button>
+
+                    <div id="interactiveOutput" class="interactive-output">Výsledek se zobrazí zde.</div>
+                </div>
+
+                <h3>Příklad funkce</h3>
+                <div class="code-block">
+def pozdrav(jméno, věk):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if věk >= 18:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f"Ahoj {jméno}, jste dospělý."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f"Ahoj {jméno}, jste nezletilý."<br>
+                </div>
+            </section>
         </main>
 
         <footer>
             <p>&copy; 2026 Základy Pythonu - Vzdělávací materiál</p>
         </footer>
     </div>
+    <script>
+        const interactiveOutput = document.getElementById("interactiveOutput");
+        const runFunctionBtn = document.getElementById("runFunctionBtn");
+
+        function runInteractiveFunction() {
+            const name = document.getElementById("userName").value.trim();
+            const ageInput = document.getElementById("userAge").value.trim();
+            const age = Number(ageInput);
+
+            if (!name) {
+                interactiveOutput.textContent = "Prosím, zadejte své jméno.";
+                return;
+            }
+            if (!ageInput || Number.isNaN(age) || age < 0) {
+                interactiveOutput.textContent = "Prosím, zadejte platný věk.";
+                return;
+            }
+
+            const category = age >= 18 ? "dospělý" : "nezletilý";
+            interactiveOutput.textContent = `Ahoj ${name}! Podle věku ${age} let jste ${category}.`;
+        }
+
+        runFunctionBtn.addEventListener("click", runInteractiveFunction);
+    </script>
 </body>
 </html>
