@@ -433,6 +433,7 @@
             <button class="tab-btn" data-tab="podminky">Podmínky</button>
             <button class="tab-btn" data-tab="smycky">Smyčky</button>
             <button class="tab-btn" data-tab="funkce">Funkce</button>
+            <button class="tab-btn" data-tab="moduly">Moduly</button>
         </div>
 
         <main>
@@ -710,6 +711,45 @@ def dělení(a, b):<br>
 <br>
 p, z = dělení(17, 5)<br>
 print(p, z)  # 3 2
+                </div>
+            </section>
+
+            <!-- Moduly -->
+            <section id="moduly">
+                <h2>Moduly</h2>
+                <p>Moduly umožňují organizovat kód do samostatných souborů. Můžete importovat funkce, třídy a proměnné z jiných modulů.</p>
+
+                <h3>Import modulu</h3>
+                <div class="code-block">
+import math<br>
+<br>
+print(math.sqrt(16))  # 4.0<br>
+print(math.pi)        # 3.141592653589793
+                </div>
+
+                <h3>Import konkrétních funkcí</h3>
+                <div class="code-block">
+from math import sqrt, pi<br>
+<br>
+print(sqrt(25))  # 5.0<br>
+print(pi)        # 3.141592653589793
+                </div>
+
+                <h3>Vytváření vlastního modulu</h3>
+                <p>Vytvořte soubor <code>muj_modul.py</code>:</p>
+                <div class="code-block">
+def pozdrav(jméno):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return f"Ahoj, {jméno}!"<br>
+<br>
+PI = 3.14159
+                </div>
+
+                <p>Pak ho můžete importovat:</p>
+                <div class="code-block">
+import muj_modul<br>
+<br>
+print(muj_modul.pozdrav("Jan"))<br>
+print(muj_modul.PI)
                 </div>
             </section>
         </main>
