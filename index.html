@@ -32,45 +32,57 @@
             padding: 20px;
         }
 
-        body[data-theme="cobra"] {
+        body[data-theme="dark"] {
             background-image: radial-gradient(circle at 16% 12%, rgba(255, 255, 255, 0.08), transparent 18%),
                 radial-gradient(circle at 72% 22%, rgba(75, 170, 255, 0.1), transparent 18%),
                 linear-gradient(135deg, #070b1d 0%, #1e1141 100%);
             color: #e9ecff;
         }
 
-        body[data-theme="cobra"] header {
+        body[data-theme="dark"] header {
             background: linear-gradient(135deg, #2d3872 0%, #66297d 100%);
         }
 
-        body[data-theme="cobra"] .container {
+        body[data-theme="dark"] .container {
+            background: #0f0f23;
             box-shadow: 0 20px 80px rgba(0, 0, 0, 0.35);
         }
 
-        body[data-theme="cobra"] .card,
-        body[data-theme="cobra"] .example-section,
-        body[data-theme="cobra"] .interactive-panel {
+        body[data-theme="dark"] .card,
+        body[data-theme="dark"] .example-section {
             background: rgba(11, 16, 45, 0.95);
             border-color: rgba(102, 126, 234, 0.25);
         }
 
-        body[data-theme="cobra"] .code-block {
+        body[data-theme="dark"] .code-block {
             background: #0b1323;
         }
 
-        body[data-theme="cobra"] nav {
+        body[data-theme="dark"] nav {
             background: rgba(7, 13, 35, 0.9);
             border-bottom-color: rgba(102, 126, 234, 0.35);
         }
 
-        body[data-theme="cobra"] nav a {
+        body[data-theme="dark"] nav a {
             color: #c8d7ff;
         }
 
-        body[data-theme="cobra"] nav a:hover,
-        body[data-theme="cobra"] nav a:focus {
+        body[data-theme="dark"] nav a:hover,
+        body[data-theme="dark"] nav a:focus {
             background: rgba(102, 126, 234, 0.16);
             color: #fff;
+        }
+
+        body[data-theme="dark"] footer {
+            background: #0a0a0a;
+        }
+
+        body[data-theme="dark"] .btn-back-to-top {
+            background: #2d3872;
+        }
+
+        body[data-theme="dark"] .btn-back-to-top:hover {
+            background: #66297d;
         }
 
         .container {
@@ -154,30 +166,84 @@
             opacity: 0.9;
         }
 
-        nav {
-            background: var(--accent);
-            padding: 0;
-            border-bottom: 2px solid var(--primary);
-        }
-
-        nav ul {
-            list-style: none;
+        .tabs {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            background: var(--accent);
+            border-bottom: 2px solid var(--primary);
+            width: 100%;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            justify-content: space-between;
         }
 
-        nav a {
-            display: block;
-            padding: 15px 20px;
+        .tab-btn {
+            flex: 1;
+            padding: 18px 15px;
+            background: none;
+            border: none;
             color: var(--primary);
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            position: relative;
+            font-family: inherit;
         }
 
-        nav a:hover, nav a:focus {
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .tab-btn:hover::after,
+        .tab-btn:focus::after {
+            width: 80%;
+        }
+
+        .tab-btn.active {
             background: var(--primary);
+            color: white;
+            border-bottom-color: var(--secondary);
+        }
+
+        .tab-btn.active::after {
+            width: 100%;
+            background: white;
+        }
+
+        .tab-btn:hover, .tab-btn:focus {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-bottom-color: var(--secondary);
+        }
+
+        body[data-theme="dark"] .tabs {
+            background: rgba(7, 13, 35, 0.9);
+            border-bottom-color: rgba(102, 126, 234, 0.35);
+        }
+
+        body[data-theme="dark"] .tab-btn {
+            color: #c8d7ff;
+        }
+
+        body[data-theme="dark"] .tab-btn:hover,
+        body[data-theme="dark"] .tab-btn:focus {
+            background: rgba(102, 126, 234, 0.16);
+        }
+
+        body[data-theme="dark"] .tab-btn.active {
+            background: rgba(102, 126, 234, 0.16);
             color: white;
         }
 
@@ -186,26 +252,16 @@
         }
 
         section {
-            margin-bottom: 40px;
-            scroll-margin-top: 60px;
+            display: none;
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeInUp 0.6s ease-out forwards;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-        section:nth-child(1) { animation-delay: 0.1s; }
-        section:nth-child(2) { animation-delay: 0.2s; }
-        section:nth-child(3) { animation-delay: 0.3s; }
-        section:nth-child(4) { animation-delay: 0.4s; }
-        section:nth-child(5) { animation-delay: 0.5s; }
-        section:nth-child(6) { animation-delay: 0.6s; }
-        section:nth-child(7) { animation-delay: 0.7s; }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         section h2 {
@@ -333,58 +389,6 @@
             outline-offset: 2px;
         }
 
-        .interactive-panel {
-            display: grid;
-            gap: 16px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(102, 126, 234, 0.18);
-        }
-
-        .interactive-panel label {
-            display: grid;
-            gap: 8px;
-            font-weight: 600;
-        }
-
-        .interactive-panel input {
-            padding: 12px 14px;
-            border: 1px solid #ccd6ff;
-            border-radius: 8px;
-            font-size: 1em;
-            width: 100%;
-        }
-
-        .interactive-panel button {
-            width: fit-content;
-            padding: 12px 18px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .interactive-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .interactive-panel button:hover {
-            background: var(--secondary);
-        }
-
-        .interactive-output {
-            padding: 14px;
-            border-radius: 10px;
-            background: #eef2ff;
-            border: 1px dashed var(--primary);
-            font-weight: 600;
-        }
-
             header h1 {
                 font-size: 2em;
             }
@@ -393,12 +397,16 @@
                 padding: 20px;
             }
 
-            nav ul {
-                flex-direction: column;
+            .tabs {
+                flex-wrap: nowrap;
             }
 
-            nav a {
-                border-bottom: 1px solid #ddd;
+            .tab-btn {
+                flex: 0 0 auto;
+                width: auto;
+                min-width: 80px;
+                padding: 12px 8px;
+                font-size: 12px;
             }
         
     </style>
@@ -408,7 +416,7 @@
         <header>
             <h1>🐍 Základy Pythonu</h1>
             <p>Kompletní průvodce pro začátečníky</p>
-            <button id="themeToggleBtn" class="theme-btn" type="button">Aktivovat Kobra režim</button>
+            <button id="themeToggleBtn" class="theme-btn" type="button">Aktivovat tmavý režim</button>
             <div class="hero-grid" aria-hidden="true">
                 <span style="top: 10%; left: 15%; width: 220px; height: 220px;"></span>
                 <span style="top: 50%; left: 70%; width: 290px; height: 290px;"></span>
@@ -416,22 +424,19 @@
             </div>
         </header>
 
-        <nav>
-            <ul>
-                <li><a href="#intro">Úvod</a></li>
-                <li><a href="#promenne">Proměnné</a></li>
-                <li><a href="#typy">Typy dat</a></li>
-                <li><a href="#operatory">Operátory</a></li>
-                <li><a href="#podminky">Podmínky</a></li>
-                <li><a href="#smycky">Smyčky</a></li>
-                <li><a href="#funkce">Funkce</a></li>
-                <li><a href="#interaktivni">Interaktivní fce</a></li>
-            </ul>
-        </nav>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="intro">Úvod</button>
+            <button class="tab-btn" data-tab="promenne">Proměnné</button>
+            <button class="tab-btn" data-tab="typy">Typy dat</button>
+            <button class="tab-btn" data-tab="operatory">Operátory</button>
+            <button class="tab-btn" data-tab="podminky">Podmínky</button>
+            <button class="tab-btn" data-tab="smycky">Smyčky</button>
+            <button class="tab-btn" data-tab="funkce">Funkce</button>
+        </div>
 
         <main>
             <!-- Úvod -->
-            <section id="intro">
+            <section id="intro" class="active">
                 <h2>Úvod do Pythonu</h2>
                 <p>Python je moderní, jednoduše se učitelný a velmi populární programovací jazyk. Je znám pro svou přehledinou syntaxi a flexibilitu. Python se používá v mnoha oblastech včetně:</p>
                 
@@ -706,39 +711,6 @@ p, z = dělení(17, 5)<br>
 print(p, z)  # 3 2
                 </div>
             </section>
-
-            <section id="interaktivni">
-                <h2>Interaktivní funkce</h2>
-                <p>Vyzkoušejte funkci přímo na stránce. Stačí zadat údaje a kliknout na tlačítko.</p>
-
-                <div class="interactive-panel">
-                    <label for="userName">
-                        Jméno
-                        <input type="text" id="userName" placeholder="Zadejte své jméno">
-                    </label>
-
-                    <label for="userAge">
-                        Věk
-                        <input type="number" id="userAge" placeholder="Zadejte svůj věk" min="0">
-                    </label>
-
-                    <div class="interactive-actions">
-                        <button type="button" id="runFunctionBtn">Spustit funkci</button>
-                        <button type="button" id="tipBtn">Generuj kobra tip</button>
-                    </div>
-
-                    <div id="interactiveOutput" class="interactive-output">Výsledek se zobrazí zde.</div>
-                </div>
-
-                <h3>Příklad funkce</h3>
-                <div class="code-block">
-def pozdrav(jméno, věk):<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if věk >= 18:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f"Ahoj {jméno}, jste dospělý."<br>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f"Ahoj {jméno}, jste nezletilý."<br>
-                </div>
-            </section>
         </main>
 
         <footer>
@@ -746,55 +718,42 @@ def pozdrav(jméno, věk):<br>
         </footer>
     </div>
     <script>
-        const interactiveOutput = document.getElementById("interactiveOutput");
-        const runFunctionBtn = document.getElementById("runFunctionBtn");
-        const tipBtn = document.getElementById("tipBtn");
         const themeToggleBtn = document.getElementById("themeToggleBtn");
 
-        const cobraTips = [
-            "Dobře pojmenované proměnné jsou jako dobře stavěná kobra – přímo a bez zmatků.",
-            "Funkce v Pythonu by měly být malé a popisné. Každá má jeden úkol.",
-            "Použij `len()` pro délku seznamu a `range()` pro bezpečné opakování smyček.",
-            "Komentáře jsou tvůj kamarád, ale čistý kód by je měl umět nahradit.",
-            "Při práci s typy dat se zaměř na čitelnost: raději `text = str(data)` než složitou směs.",
-        ];
+        function toggleDarkTheme() {
+            const isActive = document.body.dataset.theme === "dark";
+            document.body.dataset.theme = isActive ? "default" : "dark";
+            themeToggleBtn.textContent = isActive ? "Aktivovat tmavý režim" : "Vypnout tmavý režim";
+        }
 
-        function runInteractiveFunction() {
-            const name = document.getElementById("userName").value.trim();
-            const ageInput = document.getElementById("userAge").value.trim();
-            const age = Number(ageInput);
+        // Tab switching functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const sections = document.querySelectorAll('section');
 
-            if (!name) {
-                return showResult("Prosím, zadejte své jméno.");
+        function switchTab(tabName) {
+            // Remove active class from all tabs and sections
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Add active class to clicked tab and corresponding section
+            const activeTab = document.querySelector(`[data-tab="${tabName}"]`);
+            const activeSection = document.getElementById(tabName);
+
+            if (activeTab && activeSection) {
+                activeTab.classList.add('active');
+                activeSection.classList.add('active');
             }
-            if (!ageInput || Number.isNaN(age) || age < 0) {
-                return showResult("Prosím, zadejte platný věk.");
-            }
-
-            const category = age >= 18 ? "dospělý" : "nezletilý";
-            showResult(`Ahoj ${name}! Podle tvého věku ${age} let jsi ${category}. Kobra říká: kód si piš čistý.`);
         }
 
-        function showRandomTip() {
-            const tip = cobraTips[Math.floor(Math.random() * cobraTips.length)];
-            showResult(`🧠 Kobra tip: ${tip}`);
-        }
+        // Add click event listeners to tabs
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabName = btn.dataset.tab;
+                switchTab(tabName);
+            });
+        });
 
-        function showResult(message) {
-            interactiveOutput.textContent = message;
-            interactiveOutput.style.opacity = "1";
-            interactiveOutput.style.transform = "translateY(0)";
-        }
-
-        function toggleCobraTheme() {
-            const isActive = document.body.dataset.theme === "cobra";
-            document.body.dataset.theme = isActive ? "default" : "cobra";
-            themeToggleBtn.textContent = isActive ? "Aktivovat Kobra režim" : "Vypnout Kobra režim";
-        }
-
-        runFunctionBtn.addEventListener("click", runInteractiveFunction);
-        tipBtn.addEventListener("click", showRandomTip);
-        themeToggleBtn.addEventListener("click", toggleCobraTheme);
+        themeToggleBtn.addEventListener("click", toggleDarkTheme);
     </script>
 </body>
 </html>
