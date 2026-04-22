@@ -18,6 +18,19 @@
     </style>
 </head>
 <body class="bg-white text-gray-900">
+    <nav class="bg-gray-800 text-white py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+            <h1 class="text-xl font-bold">Estetická Medicína</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#hero" class="hover:text-gray-300">Úvod</a></li>
+                <li><a href="#troubles" class="hover:text-gray-300">Co Vás trápí</a></li>
+                <li><a href="#help" class="hover:text-gray-300">Jak Vám umíme pomoci</a></li>
+                <li><a href="#team" class="hover:text-gray-300">Tým</a></li>
+                <li><a href="#gallery" class="hover:text-gray-300">Fotogalerie</a></li>
+                <li><a href="#contact" class="hover:text-gray-300">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
     <header id="hero" class="bg-rose min-h-screen flex items-center justify-center">
         <div class="text-center px-4">
             <h1 class="text-5xl md:text-7xl font-bold mb-4 text-gray-800">Estetická Medicína</h1>
@@ -26,84 +39,62 @@
         </div>
     </header>
 
-    <section id="about" class="py-16 px-4 bg-nude">
+    <section id="troubles" class="py-16 px-4 bg-nude">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">O mně</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="w-48 h-48 bg-gray-300 rounded-full mb-8 md:mb-0 md:mr-8 flex items-center justify-center">
-                    <span class="text-gray-600">Placeholder pro fotku</span>
-                </div>
-                <div class="text-left">
-                    <p class="text-lg mb-4">Jsem specialista v estetické medicíně s dlouholetými zkušenostmi v aplikaci botulotoxinu.</p>
-                    <p class="text-lg">Vystudoval jsem medicínu na [Univerzita], specializace na dermatologii a estetiku.</p>
-                </div>
-            </div>
+            <h2 class="text-4xl font-bold mb-8">Co Vás trápí</h2>
+            <p class="text-lg mb-4">Mnoho lidí se potýká s estetickými nedokonalostmi obličeje, jako jsou vrásky, asymetrie nebo známky stárnutí. Naše centrum se specializuje na řešení těchto problémů pomocí moderních, bezpečných metod.</p>
         </div>
     </section>
 
-    <section id="services" class="py-16 px-4 bg-white">
+    <section id="help" class="py-16 px-4 bg-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">Služby</h2>
+            <h2 class="text-4xl font-bold text-center mb-12">Jak Vám umíme pomoci</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-rose p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold mb-4">Vyhlazení vrásek</h3>
-                    <p>Redukce mimických vrásek pro mladší vzhled.</p>
+                    <h3 class="text-2xl font-bold mb-4">Minimálně invazivní postupy</h3>
+                    <p>Moderní metody bez celkové anestézie a s krátkou rekonvalescencí.</p>
                 </div>
                 <div class="bg-rose p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold mb-4">Léčba pocení</h3>
-                    <p>Řešení nadměrného pocení v podpaží a dalších oblastech.</p>
+                    <h3 class="text-2xl font-bold mb-4">Špičkové preparáty</h3>
+                    <p>Vysoká účinnost a bezpečnost díky kvalitním léčebným prostředkům.</p>
                 </div>
                 <div class="bg-rose p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold mb-4">Prevence</h3>
-                    <p>Preventivní aplikace pro zachování mladistvého vzhledu.</p>
+                    <h3 class="text-2xl font-bold mb-4">Profesionální péče</h3>
+                    <p>Citlivý přístup a diskrétnost od konzultace po pooperační péči.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="py-16 px-4 bg-nude">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">Časté dotazy</h2>
-            <details class="mb-4">
-                <summary class="cursor-pointer text-xl font-semibold mb-2">Je botulotoxin bezpečný?</summary>
-                <p>Ano, při správné aplikaci kvalifikovaným specialistou je bezpečný.</p>
-            </details>
-            <details class="mb-4">
-                <summary class="cursor-pointer text-xl font-semibold mb-2">Jak dlouho trvá efekt?</summary>
-                <p>Efekt trvá obvykle 3-6 měsíců.</p>
-            </details>
-            <details class="mb-4">
-                <summary class="cursor-pointer text-xl font-semibold mb-2">Jaká je rekonvalescence?</summary>
-                <p>Rekonvalescence je minimální, většinou žádná.</p>
-            </details>
+    <section id="team" class="py-16 px-4 bg-nude">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Tým</h2>
+            <p class="text-lg mb-4">Náš tým tvoří zkušení specialisté v estetické chirurgii obličeje s dlouholetými zkušenostmi a profesionální kvalifikací.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center">
+                <div class="w-48 h-48 bg-gray-300 rounded-full mb-8 md:mb-0 md:mr-8 flex items-center justify-center">
+                    <span class="text-gray-600">Foto lékaře</span>
+                </div>
+                <div class="text-left">
+                    <p class="text-lg">Dr. [Jméno] - Specialista na estetickou chirurgii s více než 10 lety zkušeností.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="pricing" class="py-16 px-4 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">Ceník</h2>
-            <table class="w-full table-auto border-collapse border border-gray-300">
-                <thead>
-                    <tr class="bg-gray-100">
-                        <th class="border border-gray-300 px-4 py-2">Služba</th>
-                        <th class="border border-gray-300 px-4 py-2">Cena</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">Vyhlazení vrásek</td>
-                        <td class="border border-gray-300 px-4 py-2">od 5 000 Kč</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">Léčba pocení</td>
-                        <td class="border border-gray-300 px-4 py-2">od 8 000 Kč</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">Prevence</td>
-                        <td class="border border-gray-300 px-4 py-2">od 4 000 Kč</td>
-                    </tr>
-                </tbody>
-            </table>
+    <section id="gallery" class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">Fotogalerie</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
+                    <span class="text-gray-600">Placeholder pro fotku 1</span>
+                </div>
+                <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
+                    <span class="text-gray-600">Placeholder pro fotku 2</span>
+                </div>
+                <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
+                    <span class="text-gray-600">Placeholder pro fotku 3</span>
+                </div>
+            </div>
         </div>
     </section>
 
