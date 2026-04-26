@@ -3,135 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estetická Medicína - Botulotoxin</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Estetická klinika Botox</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .bg-nude { background-color: #F5F5DC; }
-        .bg-rose { background-color: #F8E8E8; }
-        .text-rose { color: #F8E8E8; }
-        .text-gray-light { color: #D3D3D3; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-white text-gray-900">
-    <nav class="bg-gray-800 text-white py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
-            <h1 class="text-xl font-bold">Estetická Medicína</h1>
-            <ul class="flex space-x-6">
-                <li><a href="#hero" class="hover:text-gray-300">Úvod</a></li>
-                <li><a href="#troubles" class="hover:text-gray-300">Co Vás trápí</a></li>
-                <li><a href="#help" class="hover:text-gray-300">Jak Vám umíme pomoci</a></li>
-                <li><a href="#team" class="hover:text-gray-300">Tým</a></li>
-                <li><a href="#gallery" class="hover:text-gray-300">Fotogalerie</a></li>
-                <li><a href="#contact" class="hover:text-gray-300">Kontakt</a></li>
-            </ul>
-        </div>
-    </nav>
-    <header id="hero" class="bg-rose min-h-screen flex items-center justify-center">
-        <div class="text-center px-4">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 text-gray-800">Estetická Medicína</h1>
-            <p class="text-xl md:text-2xl mb-8 text-gray-700">Přirozený vzhled s botulotoxinem</p>
-            <button class="bg-gray-800 text-white px-8 py-3 rounded-full hover:bg-gray-700 transition">Rezervovat konzultaci</button>
-        </div>
-    </header>
-
-    <section id="troubles" class="py-16 px-4 bg-nude">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">Co Vás trápí</h2>
-            <p class="text-lg mb-4">Mnoho lidí se potýká s estetickými nedokonalostmi obličeje, jako jsou vrásky, asymetrie nebo známky stárnutí. Naše centrum se specializuje na řešení těchto problémů pomocí moderních, bezpečných metod.</p>
-        </div>
-    </section>
-
-    <section id="help" class="py-16 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">Jak Vám umíme pomoci</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-rose p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold mb-4">Minimálně invazivní postupy</h3>
-                    <p>Moderní metody bez celkové anestézie a s krátkou rekonvalescencí.</p>
-                </div>
-                <div class="bg-rose p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold mb-4">Špičkové preparáty</h3>
-                    <p>Vysoká účinnost a bezpečnost díky kvalitním léčebným prostředkům.</p>
-                </div>
-                <div class="bg-rose p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold mb-4">Profesionální péče</h3>
-                    <p>Citlivý přístup a diskrétnost od konzultace po pooperační péči.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="team" class="py-16 px-4 bg-nude">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">Tým</h2>
-            <p class="text-lg mb-4">Náš tým tvoří zkušení specialisté v estetické chirurgii obličeje s dlouholetými zkušenostmi a profesionální kvalifikací.</p>
-            <div class="flex flex-col md:flex-row items-center justify-center">
-                <div class="w-48 h-48 bg-gray-300 rounded-full mb-8 md:mb-0 md:mr-8 flex items-center justify-center">
-                    <span class="text-gray-600">Foto lékaře</span>
-                </div>
-                <div class="text-left">
-                    <p class="text-lg">Dr. [Jméno] - Specialista na estetickou chirurgii s více než 10 lety zkušeností.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="py-16 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">Fotogalerie</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-                    <span class="text-gray-600">Placeholder pro fotku 1</span>
-                </div>
-                <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-                    <span class="text-gray-600">Placeholder pro fotku 2</span>
-                </div>
-                <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-                    <span class="text-gray-600">Placeholder pro fotku 3</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-16 px-4 bg-rose">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">Kontakt</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <div class="bg-gray-300 h-64 rounded-lg mb-4 flex items-center justify-center">
-                        <span>Placeholder pro Google Mapu</span>
+<body>
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <span class="subtitle">Profesionální aplikace botoxu</span>
+                    <h1>Krása bez kompromisů</h1>
+                    <p>V naší klinice vám pomůžeme zachovat přirozený výraz bez ztráty vitality. Botox aplikujeme s respektem k vaší jedinečnosti.</p>
+                    <div class="buttons">
+                        <a href="#contact" class="button-primary">Rezervovat termín</a>
                     </div>
-                    <p class="mb-2"><strong>Adresa:</strong> [Vaše adresa]</p>
-                    <p class="mb-2"><strong>Telefon:</strong> [Vaše telefon]</p>
                 </div>
-                <div>
-                    <form class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2">Jméno</label>
-                            <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded">
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2">Email</label>
-                            <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded">
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2">Zpráva</label>
-                            <textarea class="w-full px-3 py-2 border border-gray-300 rounded h-24"></textarea>
-                        </div>
-                        <button type="submit" class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700">Odeslat</button>
-                    </form>
+                <div class="hero-image">
+                    <img src="./images/botox-hero.png" alt="Botox aplikace" />
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="bg-gray-800 text-white py-8 px-4 text-center">
-        <p>&copy; 2023 Estetická Medicína. Všechna práva vyhrazena.</p>
+        <section id="benefits" class="container">
+            <div class="section-title">
+                <h2>Výhody estetické péče</h2>
+                <p>Luxusní a bezpečný přístup, který přináší přirozené výsledky.</p>
+            </div>
+            <div class="cards">
+                <article class="card">
+                    <div class="card-icon">✨</div>
+                    <h3>Přirozený efekt</h3>
+                    <p>Zbytečně nepřeplňuje obličej, ale jemně redukuje vrásky.</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">⏱️</div>
+                    <h3>Rychlá procedura</h3>
+                    <p>Ošetření trvá jen krátkou chvíli a můžete pokračovat v běžném dni.</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🌿</div>
+                    <h3>Bezpečný postup</h3>
+                    <p>Využíváme ověřené metody a provádíme zákrok s důrazem na kvalitu.</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">♥</div>
+                    <h3>Individuální péče</h3>
+                    <p>Každý plán přizpůsobíme vašim cílům a typu pokožky.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-title">
+                <h2>Benefity botoxu</h2>
+                <p>Botox je moderní řešení pro mladistvý vzhled s dlouhodobým efektem.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefits-item">
+                    <h3>Redukce vrásek</h3>
+                    <p>Vyhlazuje mimické vrásky a přináší hladší pleť.</p>
+                </div>
+                <div class="benefits-item">
+                    <h3>Rychlé zotavení</h3>
+                    <p>Žádné dlouhé ležení, jen lehká péče po aplikaci.</p>
+                </div>
+                <div class="benefits-item">
+                    <h3>Delší výdrž</h3>
+                    <p>Výsledek může trvat několik měsíců při pravidelných úpravách.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="container">
+            <div class="section-title">
+                <h2>Jak probíhá ošetření</h2>
+                <p>Krok za krokem vám ukážeme, že ošetření může být příjemné a bez stresu.</p>
+            </div>
+            <div class="steps">
+                <article class="step">
+                    <div class="step-number">1</div>
+                    <h3>Konzultace</h3>
+                    <p>Probereme vaše očekávání a navrhneme vhodné řešení.</p>
+                </article>
+                <article class="step">
+                    <div class="step-number">2</div>
+                    <h3>Aplikace</h3>
+                    <p>Precizní aplikace botoxu do pečlivě vybraných oblastí.</p>
+                </article>
+                <article class="step">
+                    <div class="step-number">3</div>
+                    <h3>Péče</h3>
+                    <p>Poskytneme vám jednoduché pokyny pro nejlepší výsledky.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <div class="cta">
+                <h2>Rezervujte konzultaci</h2>
+                <p>Zajistěte si termín ještě dnes a dopřejte své pokožce kvalitní péči. Kontaktujte nás pro nezávaznou rezervaci.</p>
+                <a href="#" class="button-primary">Rezervovat termín</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container" style="padding: 2rem 0; text-align:center; color: #6d665d; font-size: 0.95rem;">
+        <p>&copy; 2025 Estetická klinika Botox. Všechna práva vyhrazena.</p>
     </footer>
 </body>
 </html>
