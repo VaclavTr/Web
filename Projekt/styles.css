@@ -74,11 +74,7 @@ a {
     flex: 1 1 0;
     text-align: center;
     min-width: 7rem;
-}
-
-.header-nav a.button-secondary {
     background: rgba(255, 255, 255, 0.12);
-    border-radius: 1rem;
 }
 
 .header-nav a:hover {
@@ -114,21 +110,26 @@ a {
     opacity: 0;
     transform: translateY(18px);
     animation: fadeInUp 0.9s ease forwards;
+    background: var(--surface);
+    border-radius: 1.8rem;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 18px 45px rgba(31, 31, 31, 0.06);
 }
 
-.hero-copy h1,
+.hero-copy h2,
 .hero-copy p,
 .hero-copy .buttons {
     animation-delay: 0.15s;
 }
 
-.hero-copy h1 {
-    margin: 0 0 1.25rem;
-    font-size: clamp(3rem, 4vw, 5.2rem);
+.hero-copy h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.5rem, 4vw, 4rem);
     line-height: 1.02;
     letter-spacing: -0.03em;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     color: #1e1b18;
 }
 
@@ -170,8 +171,9 @@ a {
 }
 
 .button-primary:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
     background: var(--accent-dark);
+    box-shadow: 0 20px 40px rgba(180, 141, 89, 0.25);
 }
 
 .button-secondary {
@@ -181,8 +183,9 @@ a {
 }
 
 .button-secondary:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
     background: #fff;
+    box-shadow: 0 20px 40px rgba(31, 31, 31, 0.1);
 }
 
 .hero-media {
@@ -231,13 +234,19 @@ section {
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
+    background: var(--surface);
+    border-radius: 1.8rem;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 18px 45px rgba(31, 31, 31, 0.06);
 }
 
 .section-title h2 {
     margin: 0;
     font-size: clamp(2rem, 3vw, 3rem);
     line-height: 1.05;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
 }
 
 .section-title p {
