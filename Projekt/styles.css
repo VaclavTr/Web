@@ -146,7 +146,7 @@ a {
     font-size: clamp(2.5rem, 4vw, 4rem);
     line-height: 1.02;
     letter-spacing: -0.03em;
-    font-family: inherit;
+    font-family: var(--heading-font);
     font-weight: 600;
     color: #1e1b18;
 }
@@ -331,7 +331,7 @@ section {
     margin: 0;
     font-size: clamp(2rem, 3vw, 3rem);
     line-height: 1.05;
-    font-family: inherit;
+    font-family: var(--heading-font);
     font-weight: 600;
 }
 
@@ -348,6 +348,36 @@ section {
     color: var(--muted);
     line-height: 1.8;
     text-align: center;
+}
+
+.hero-copy,
+.section-title,
+.card,
+.contact-card,
+.benefits-item,
+.step {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 18px 45px rgba(31, 31, 31, 0.06);
+}
+
+.hero-copy::after,
+.section-title::after,
+.card::after,
+.contact-card::after,
+.benefits-item::after,
+.step::after {
+    content: '';
+    position: absolute;
+    right: -2.4rem;
+    top: -2.4rem;
+    width: 8.5rem;
+    height: 8.5rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(179, 145, 97, 0.13), rgba(179, 145, 97, 0));
+    pointer-events: none;
 }
 
 .about-timeline {
@@ -388,6 +418,7 @@ section {
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
+    z-index: 2;
     background: radial-gradient(circle at 35% 35%, #fff 0.1rem, var(--accent) 0.45rem, var(--accent-dark) 100%);
     box-shadow: 0 0 0 4px rgba(179, 145, 97, 0.18);
 }
@@ -420,6 +451,14 @@ section {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Ceník: náčrt 2×2 (nahoře Botulotoxin | Kyselina hyaluronová, dole Konzultace | Dárkové poukazy) */
+.cards.cenik-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card {
@@ -460,6 +499,10 @@ section {
     line-height: 1.75;
 }
 
+.card > p + ul {
+    margin-top: 0.75rem;
+}
+
 .card ul,
 .contact-card ul {
     list-style: none;
@@ -478,7 +521,7 @@ section {
 }
 
 .card li::before {
-    content: '•';
+    content: '✦';
     position: absolute;
     left: 0;
     top: 0;
@@ -542,6 +585,14 @@ section {
 .gallery-grid {
     display: grid;
     gap: 1.5rem;
+}
+
+.troubles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.team-grid,
+.gallery-grid {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
@@ -609,7 +660,8 @@ section {
 }
 
 .service-points li span {
-    white-space: normal;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .gallery-item {
@@ -626,10 +678,15 @@ section {
 }
 
 @media (max-width: 960px) {
-    .troubles-grid,
     .team-grid,
     .gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1100px) {
+    .troubles-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -717,7 +774,7 @@ section {
 }
 
 @media (max-width: 960px) {
-    .cards,
+    .cards:not(.cenik-grid),
     .benefits-grid,
     .steps {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -752,10 +809,15 @@ section {
     .hero-highlights li {
         text-align: left;
     }
-    .cards,
+    .cards:not(.cenik-grid),
     .benefits-grid,
     .steps {
         grid-template-columns: 1fr;
+    }
+
+    .cards.cenik-grid {
+        grid-template-columns: 1fr;
+        max-width: none;
     }
     .about-timeline {
         padding-left: 2.1rem;
