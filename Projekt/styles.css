@@ -264,6 +264,72 @@ section {
     text-align: center;
 }
 
+.about-timeline {
+    position: relative;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 0.5rem 0 0.5rem 2.8rem;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.about-timeline::before {
+    content: '';
+    position: absolute;
+    left: 1.15rem;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(179, 145, 97, 0.25), rgba(140, 109, 69, 0.9), rgba(179, 145, 97, 0.25));
+}
+
+.timeline-item {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    padding: 1.2rem 1.2rem 1.2rem 1.4rem;
+    box-shadow: 0 14px 30px rgba(31, 31, 31, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.35rem;
+    top: 1.55rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #fff 0.1rem, var(--accent) 0.45rem, var(--accent-dark) 100%);
+    box-shadow: 0 0 0 4px rgba(179, 145, 97, 0.18);
+}
+
+.timeline-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 38px rgba(31, 31, 31, 0.1);
+}
+
+.timeline-year {
+    display: inline-block;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent-dark);
+    background: rgba(179, 145, 97, 0.14);
+    border-radius: 999px;
+    padding: 0.28rem 0.7rem;
+    margin-bottom: 0.6rem;
+}
+
+.timeline-content {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
 .cards {
     display: grid;
     gap: 1.5rem;
@@ -525,6 +591,15 @@ section {
     .benefits-grid,
     .steps {
         grid-template-columns: 1fr;
+    }
+    .about-timeline {
+        padding-left: 2.1rem;
+    }
+    .about-timeline::before {
+        left: 0.75rem;
+    }
+    .timeline-item::before {
+        left: -1.7rem;
     }
     section {
         padding: 3.5rem 0;
