@@ -87,8 +87,8 @@ a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
-    padding: 0.85rem 0.8rem;
-    flex: 1 1 20%;
+    padding: 0.85rem 0.65rem;
+    flex: 1 1 0;
     text-align: center;
     min-width: 0;
     white-space: nowrap;
@@ -492,12 +492,28 @@ section.hero {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-/* Ceník: náčrt 2×2 (nahoře Botulotoxin | Kyselina hyaluronová, dole Konzultace | Dárkové poukazy) */
+/* Služby a ceník: stejná šířka, zarovnané sloupce */
+.cards.cenik-grid,
+.troubles-grid {
+    max-width: 72rem;
+    margin-inline: auto;
+    align-items: stretch;
+}
+
 .cards.cenik-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 56rem;
-    margin-left: auto;
-    margin-right: auto;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.cards.cenik-grid .card {
+    grid-column: span 2;
+}
+
+.cards.cenik-grid .card:nth-child(4) {
+    grid-column: 2 / 4;
+}
+
+.cards.cenik-grid .card:nth-child(5) {
+    grid-column: 4 / 6;
 }
 
 .card {
@@ -507,6 +523,16 @@ section.hero {
     border: 1px solid var(--border);
     box-shadow: 0 18px 45px rgba(31, 31, 31, 0.06);
     transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.cenik-grid .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cenik-grid .card ul {
+    flex: 1;
 }
 
 .card:hover {
@@ -672,7 +698,7 @@ section.hero {
 }
 
 .troubles-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .team-grid,
@@ -683,6 +709,9 @@ section.hero {
 .service-card {
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card::after {
@@ -711,7 +740,8 @@ section.hero {
 }
 
 .service-focus {
-    margin: 2.75rem 0 0.75rem;
+    margin-top: auto;
+    margin-bottom: 0.75rem;
     padding: 0.75rem 0.9rem;
     border-left: 3px solid rgba(179, 145, 97, 0.7);
     border-radius: 0.75rem;
@@ -779,7 +809,23 @@ section.hero {
     width: 100%;
     display: block;
     object-fit: cover;
-    min-height: 220px;
+    aspect-ratio: 3 / 4;
+}
+
+.gallery-item--contain img {
+    object-fit: contain;
+    object-position: center;
+    background: var(--surface);
+}
+
+.gallery-caption {
+    margin: 0;
+    padding: 0.85rem 1rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-align: center;
+    background: var(--surface);
 }
 
 @media (max-width: 960px) {
@@ -791,7 +837,27 @@ section.hero {
 
 @media (max-width: 1100px) {
     .troubles-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .troubles-grid .service-card:last-child {
+        grid-column: 1 / -1;
+        width: min(100%, calc(50% - 0.75rem));
+        justify-self: center;
+    }
+
+    .cards.cenik-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cards.cenik-grid .card {
+        grid-column: auto;
+    }
+
+    .cards.cenik-grid .card:nth-child(5):last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: min(100%, calc(50% - 0.75rem));
+        justify-self: center;
     }
 }
 
@@ -923,6 +989,10 @@ main .section-alt .troubles-grid .service-card:nth-child(2) {
     animation-delay: 0.22s;
 }
 
+main .section-alt .troubles-grid .service-card:nth-child(3) {
+    animation-delay: 0.32s;
+}
+
 main .section-alt .cenik-grid .card {
     opacity: 0;
     animation: fadeInUp 0.72s ease forwards;
@@ -942,6 +1012,10 @@ main .section-alt .cenik-grid .card:nth-child(3) {
 
 main .section-alt .cenik-grid .card:nth-child(4) {
     animation-delay: 0.36s;
+}
+
+main .section-alt .cenik-grid .card:nth-child(5) {
+    animation-delay: 0.44s;
 }
 
 main .section-alt .about-timeline .timeline-item {
@@ -981,6 +1055,23 @@ main .section-alt .about-timeline .timeline-item:nth-child(8) {
     animation-delay: 0.52s;
 }
 
+main .section-alt .gallery-grid .gallery-item {
+    opacity: 0;
+    animation: fadeInUp 0.72s ease forwards;
+}
+
+main .section-alt .gallery-grid .gallery-item:nth-child(1) {
+    animation-delay: 0.12s;
+}
+
+main .section-alt .gallery-grid .gallery-item:nth-child(2) {
+    animation-delay: 0.22s;
+}
+
+main .section-alt .gallery-grid .gallery-item:nth-child(3) {
+    animation-delay: 0.32s;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .hero-copy,
     .hero-media,
@@ -989,7 +1080,8 @@ main .section-alt .about-timeline .timeline-item:nth-child(8) {
     main .section-alt .contact-grid .contact-card,
     main .section-alt .troubles-grid .service-card,
     main .section-alt .cenik-grid .card,
-    main .section-alt .about-timeline .timeline-item {
+    main .section-alt .about-timeline .timeline-item,
+    main .section-alt .gallery-grid .gallery-item {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
@@ -1053,9 +1145,25 @@ main .section-alt .about-timeline .timeline-item:nth-child(8) {
         grid-template-columns: 1fr;
     }
 
+    .troubles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .troubles-grid .service-card:last-child {
+        width: 100%;
+        grid-column: auto;
+        justify-self: stretch;
+    }
+
     .cards.cenik-grid {
         grid-template-columns: 1fr;
         max-width: none;
+    }
+
+    .cards.cenik-grid .card:nth-child(5) {
+        width: 100%;
+        grid-column: auto;
+        justify-self: stretch;
     }
 
     .contact-pair {
