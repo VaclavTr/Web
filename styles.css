@@ -513,7 +513,20 @@ section.hero {
 }
 
 .cards.cenik-grid .card:nth-child(5) {
-    grid-column: 4 / 6;
+    grid-column: 1 / -1;
+    width: min(100%, 52rem);
+    justify-self: center;
+    padding: 2.25rem 2.75rem;
+}
+
+.cenik-grid .card:nth-child(5) ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+}
+
+.cenik-grid .card:nth-child(5) li {
+    flex: 1 1 12rem;
 }
 
 .card {
@@ -533,6 +546,10 @@ section.hero {
 
 .cenik-grid .card ul {
     flex: 1;
+}
+
+.cenik-grid .price-range {
+    white-space: nowrap;
 }
 
 .card:hover {
@@ -829,9 +846,12 @@ section.hero {
 }
 
 @media (max-width: 960px) {
-    .team-grid,
-    .gallery-grid {
+    .team-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -850,14 +870,19 @@ section.hero {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .cards.cenik-grid .card {
+    .cards.cenik-grid .card,
+    .cards.cenik-grid .card:nth-child(4),
+    .cards.cenik-grid .card:nth-child(5) {
         grid-column: auto;
+        width: 100%;
+        justify-self: stretch;
     }
 
     .cards.cenik-grid .card:nth-child(5):last-child:nth-child(odd) {
         grid-column: 1 / -1;
-        width: min(100%, calc(50% - 0.75rem));
-        justify-self: center;
+        width: 100%;
+        max-width: none;
+        justify-self: stretch;
     }
 }
 
@@ -1155,15 +1180,35 @@ main .section-alt .gallery-grid .gallery-item:nth-child(3) {
         justify-self: stretch;
     }
 
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        min-width: 0;
+    }
+
     .cards.cenik-grid {
         grid-template-columns: 1fr;
         max-width: none;
     }
 
+    .cards.cenik-grid .card,
+    .cards.cenik-grid .card:nth-child(4),
     .cards.cenik-grid .card:nth-child(5) {
-        width: 100%;
         grid-column: auto;
+        width: 100%;
+        max-width: none;
         justify-self: stretch;
+    }
+
+    .section-alt {
+        padding: 3rem 1.25rem;
+        border-radius: 2rem;
+    }
+
+    .container {
+        width: min(1200px, calc(100% - 1.5rem));
     }
 
     .contact-pair {
