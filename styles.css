@@ -513,10 +513,10 @@ section.hero {
 }
 
 .cards.cenik-grid .card:nth-child(5) {
-    grid-column: 1 / -1;
-    width: min(100%, 52rem);
-    justify-self: center;
-    padding: 2.25rem 2.75rem;
+    grid-column: 4 / 6;
+    width: auto;
+    justify-self: stretch;
+    padding: 2rem;
 }
 
 .cenik-grid .card:nth-child(5) ul {
@@ -878,11 +878,15 @@ section.hero {
         justify-self: stretch;
     }
 
-    .cards.cenik-grid .card:nth-child(5):last-child:nth-child(odd) {
+    .cards.cenik-grid .card:nth-child(3) {
         grid-column: 1 / -1;
-        width: 100%;
-        max-width: none;
-        justify-self: stretch;
+    }
+
+    .cards.cenik-grid .card:nth-child(4),
+    .cards.cenik-grid .card:nth-child(5) {
+        grid-column: auto;
+        grid-row: auto;
+        padding: 2rem;
     }
 }
 
